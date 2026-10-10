@@ -1364,11 +1364,7 @@ namespace osu.Framework.Platform
                     break;
             }
 
-            if (!AllowBenchmarkUnlimitedFrames)
-            {
-                drawLimiter = Math.Min(maximum_sane_fps, drawLimiter);
-                updateLimiter = Math.Min(maximum_sane_fps, updateLimiter);
-            }
+            // custom build: 1000hz sane-fps cap removed (stable-like uncapped frames).
 
             MaximumDrawHz = drawLimiter;
             MaximumUpdateHz = updateLimiter;

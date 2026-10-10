@@ -227,7 +227,8 @@ namespace osu.Framework.Platform
             }
             else
             {
-                mainThread.ActiveHz = GameThread.DEFAULT_ACTIVE_HZ;
+                // custom build: input thread follows the update limiter instead of a fixed 1000hz.
+                mainThread.ActiveHz = maximumUpdateHz;
                 mainThread.InactiveHz = GameThread.DEFAULT_INACTIVE_HZ;
             }
         }
